@@ -2,12 +2,20 @@
 # Bill Nicholson
 # nicholdw@ucmail.uc.edu
 
+
 from readingLevelPackage.readingLevel import Reading_Level
 from utilitiesPackage.utilities import *
 from utilitiesPackage.CSV_Utilities import *
 from PDFPackage.PDFUtilities import *
+from visualizationPackage.visualization import *
 
 if __name__ == "__main__":
+
+    display_team_image("dataPackage/MMLU/data/nidoking.jpg")
+
+    file_path = 'dataPackage/MMLU/data/us_foreign_policy_test.csv' 
+    data = pd.read_csv(file_path)
+    plot_correct_answer_distribution(data)
 
     CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
     questions = CSV_Processor.read_data()
@@ -61,3 +69,9 @@ if __name__ == "__main__":
     for key in reading_level_indices.keys():
         print(key, ":", reading_level_indices[key])
     """
+    
+
+    
+
+    
+
